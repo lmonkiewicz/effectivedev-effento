@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongodb/effento
+
+logging:
+  structured:
+    format:
+      console: logstash

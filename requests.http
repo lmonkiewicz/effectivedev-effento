@@ -1,0 +1,45 @@
+### Create new event
+POST http://localhost:8080/events
+Content-Type: application/json
+effento-user-id: testuser
+
+{
+  "name": "Mój event",
+  "description": "To mój super event, na który wszystkich zapraszam",
+  "url": "https://effectivedev.pl",
+  "imgUrl": "https://effectivedev.pl/img.png"
+}
+
+> {%
+    client.global.set("event-id", response.body)
+%}
+
+<> 2024-12-13T231059.201.txt
+<> 2024-12-13T230728.201.txt
+<> 2024-12-13T224437.500.json
+<> 2024-12-13T224320.500.json
+<> 2024-12-13T224243.400.json
+<> 2024-12-13T224156.400.json
+<> 2024-12-13T224112.400.json
+<> 2024-12-13T223935.400.json
+<> 2024-12-13T223700.400.json
+
+### Subscribe to event
+POST http://localhost:8080/events/{{event-id}}/subscribe
+Content-Type: application/x-www-form-urlencoded
+effento-user-id: testuser
+
+
+### List subscribed events
+GET http://127.0.0.1:8080/events/MY
+effento-user-id: testuser
+
+<> 2024-12-13T231107.200.json
+<> 2024-12-13T230743.200.json
+<> 2024-12-13T230739.200.json
+<> 2024-12-13T230732.200.json
+<> 2024-12-13T224340.500.json
+<> 2024-12-13T224258.400.json
+<> 2024-12-13T223621.400.json
+
+###
